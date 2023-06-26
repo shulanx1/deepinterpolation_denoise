@@ -114,10 +114,11 @@ def quick_inference(fld, generator_param):
     inference_param["name"] = "core_inferrence"
     
     # Where the output of the previous training is stored
-    local_path =  glob.glob(os.path.join(fld, "model_folder", "*_mean_squared_error_transfer_model.h5"))[0]
+    local_path =  glob.glob(os.path.join(fld, "model_folder", "*_mean_squared_error_transfer_model.h5"))
+    local_path.sort()
     
     inference_param["model_source"] = {
-    "local_path": local_path
+    "local_path": local_path[-1]
     }
 
     # This option is to add blank frames at the onset and end of the output
@@ -130,7 +131,7 @@ def quick_inference(fld, generator_param):
     # this is available through
     # 'python -m deepinterpolation.cli.inference --help'
     inference_param["output_datatype"] = 'uint16'
-    # inference_param["use_multiprocessing"] = True
+    # inference_param["use_multiprocessing"] = False
 
     from ScanImageTiffReader import ScanImageTiffReader
     

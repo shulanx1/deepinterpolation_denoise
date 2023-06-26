@@ -35,7 +35,7 @@ def combine_tiff_bruker(fld, preflix):
             m.append(tifffile.imread(file))
         m = np.concatenate(m, axis = 0)
         # m = cm.load_movie_chain(fls_Ch2[0:])
-        a = kalman_stack_filter(m)
+        a = kalman_stack_filter(m).astype(m.dtype)
         a = cv2.normalize(a, None, 0, 2**16-1, cv2.NORM_MINMAX).astype(np.uint16)
         tifffile.imsave(os.path.join(pre_folder,basename + '_combined.tif'),a.astype('uint16'))
         # m1 = movie(a)
@@ -66,7 +66,7 @@ def combine_tiff(fld, preflix, if_combine = 1):
             # m = cm.load_movie_chain([file])
             m = ScanImageTiffReader(file).data()
             print("processing file %d"%k)
-            a = kalman_stack_filter(m).astype('int16')
+            a = kalman_stack_filter(m).astype(m.dtype)
             a = cv2.normalize(a, None, 0, 2**16-1, cv2.NORM_MINMAX).astype(np.uint16)
             base_file = os.path.splitext(os.path.basename(file))[0]
             # m1 = movie(a)
@@ -84,7 +84,7 @@ def combine_tiff(fld, preflix, if_combine = 1):
             all_m.append(ScanImageTiffReader(file).data())
         m = np.concatenate(all_m, axis = 0)
         print("processing")
-        a = kalman_stack_filter(m).astype('int16')
+        a = kalman_stack_filter(m).astype(m.dtype)
         a = cv2.normalize(a, None, 0, 2**16-1, cv2.NORM_MINMAX).astype(np.uint16)
         # with pytiff.Tiff(os.path.join(pre_folder,preflix + '_combined.tif'), "w") as handle:
         #     for i in range(a.shape[0]):

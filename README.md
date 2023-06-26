@@ -6,27 +6,27 @@
 
 ## Installation ##
 * Download and install anaconda (https://www.anaconda.com)
-* Install deepinterpolation https://github.com/AllenInstitute/deepinterpolation. <br />
+* Install deepinterpolation https://github.com/AllenInstitute/deepinterpolation.
 Open anaconda prompt, on the command line run: <br />
- - conda create -n deepinterpolation python=3.7<br />
+ -- conda create -n deepinterpolation python=3.7<br />
 Download the deepinterpolation repository<br />
- - git clone https://github.com/AllenInstitute/deepinterpolation.git<br />
+ -- git clone https://github.com/AllenInstitute/deepinterpolation.git<br />
 Go to the directory just downloaded<br />
- - cd deepinterpolation<br />
+ -- cd deepinterpolation<br />
 Activate the environment<br />
-- conda activate deepinterpolation<br />
+-- conda activate deepinterpolation<br />
 Install<br />
-- pip install -r requirements.txt<br />
-- python setup.py install<br />
+-- pip install -r requirements.txt<br />
+-- python setup.py install<br />
 
 Note that this is for use with CPU ONLY! If you're working with GPU, follow the installing instruction in https://github.com/AllenInstitute/deepinterpolation
-* Install other dependencies<br />
-- pip install scanimage-tiff-reader tiffile opencv-python<br />
+* Install other dependencies
+-- pip install scanimage-tiff-reader tiffile opencv-python<br />
 
 * Install jupyter notebook<br />
-- conda install -c conda-forge notebook nb_conda_kernels ipywidgets <br />
-- conda install -c conda-forge nb_conda_kernels <br />
-- conda install -c conda-forge ipywidgets<br />
+-- conda install -c conda-forge notebook nb_conda_kernels ipywidgets <br />
+-- conda install -c conda-forge nb_conda_kernels <br />
+-- conda install -c conda-forge ipywidgets<br />
 ## How to run ##
 * Open jupyter notebook<br />
 	open anaconda prompt, move to the local directory where the folder with pipeline.ipynb is saved<br />
@@ -36,7 +36,7 @@ Note that this is for use with CPU ONLY! If you're working with GPU, follow the 
 	on the notebook, in the second cell, change "fld" to where the videos to be processed is saved, and "preflix" to the base name of the videos (without the indexing)<br />
 * Run the pipeline cell by cell	
 * Exit the environment after finished
- - conda deactivate
+ -- conda deactivate
 	
 
 ## Files ##

@@ -25,8 +25,7 @@ Note that this is for use with CPU ONLY! If you're working with GPU, follow the 
 
 * Install jupyter notebook<br />
 -- conda install -c conda-forge notebook nb_conda_kernels ipywidgets <br />
--- conda install -c conda-forge nb_conda_kernels <br />
--- conda install -c conda-forge ipywidgets<br />
+
 ## How to run ##
 * Open jupyter notebook<br />
 	open anaconda prompt, move to the local directory where the folder with pipeline.ipynb is saved<br />
